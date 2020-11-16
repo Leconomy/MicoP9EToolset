@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Home from '../views/Home.vue';
+import Api2Type from '../components/Api2Type.vue';
+import Image2Text from '../components/Image2Text.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/api2ts',
+    name: 'Api2Type',
+    component: Api2Type
+  },
+  {
+    path: '/image2text',
+    name: 'image2text',
+    component: Image2Text
   },
   {
     path: '/about',

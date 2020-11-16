@@ -42,7 +42,7 @@ module.exports = {
     // 强制类方法使用 this
     'class-methods-use-this': 'error',
     // 指定程序中允许的最大环路复杂度
-    complexity: ['error', { max: 5 }],
+    // complexity: ['error', { max: 5 }],
     // 要求使用一致的 return 语句, 指定返回值或隐式返回 undefined
     'consistent-return': [
       'error', {
