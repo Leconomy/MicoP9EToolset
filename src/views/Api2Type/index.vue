@@ -1,42 +1,20 @@
 <template>
-  <section
-    class="api2typeBox"
-  >
-    <div
-      class='inputBox'
-    >
-      <a-textarea
-        v-model:value='input'
-      />
+  <section class="api2typeBox">
+    <div class='inputBox'>
+      <a-textarea v-model:value='input' />
+      <div class='clear'>
+        <a-button type='primary' @click='clear'>清空</a-button>
+      </div>
     </div>
-    <div
-       class='transfefBtn'
-    >
-      <a-button
-        type='primary'
-        @click='handleTransfer'
-      >
-        转换
-      </a-button>
+    <div class='transfefBtn'>
+      <a-button type='primary' @click='handleTransfer'>转换</a-button>
     </div>
-    <div
-      class='outputBox'
-    >
-      <a-textarea
-        v-model:value='output'
-      />
-      <a-textarea
-        className='outview'
-        class='out'
-        id='output'
-        v-model:value='output'
-      />
-      <a-button
-        type='primary'
-        @click='copy'
-      >
-        复制
-      </a-button>
+    <div class='outputBox'>
+      <a-textarea v-model:value='output' />
+      <a-textarea id='output' v-model:value='output' />
+      <div class='copyBox'>
+        <a-button type='primary' :disabled='!output' @click='copy'>复制</a-button>
+      </div>
     </div>
   </section>
 </template>
@@ -79,6 +57,9 @@ export default {
       outputDom.select();
       document.execCommand('copy');
       message.success('复制成功');
+    },
+    clear () {
+      this.input = '';
     }
   }
 };
@@ -90,6 +71,7 @@ export default {
   .inputBox {
     flex: 1;
     display: flex;
+    position: relative;
     min-height: 400px;
   }
   .transfefBtn {
@@ -105,5 +87,11 @@ export default {
     position: absolute;
     left: 9999px;
     top: 9999px;
+  }
+  .clear,
+  .copyBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 </style>
