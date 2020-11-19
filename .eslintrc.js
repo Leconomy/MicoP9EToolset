@@ -30,7 +30,15 @@ module.exports = {
     ],
     // 禁止在常规字符串中出现模板字面量占位符语法
     'no-template-curly-in-string': 'error',
-
+    // 不允许多个空行
+    'no-multiple-empty-lines': [
+      'error',
+      {
+        max: 2,
+        maxEOF: 2,
+        maxBOF: 2
+      }
+    ],
     // 这些规则是关于最佳实践的
     // 强制数组方法的回调函数中有 return 语句
     'array-callback-return': [

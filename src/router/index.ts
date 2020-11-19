@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Api2Type from '../views/Api2Type/index.vue';
-import Image2Text from '../components/Image2Text.vue';
+import Image2Text from '../views/Image2Text/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
